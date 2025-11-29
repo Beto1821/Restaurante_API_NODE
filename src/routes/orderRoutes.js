@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const orderController = require('../controllers/orderController');
+const { createOrder, getAllOrders } = require('../controllers/orderController');
 
-// Aqui é onde vamos definir cada uma das nossas rotas (POST, GET, PUT, DELETE)
+
+router.post('/', createOrder);
+router.get('/', getAllOrders);
 
 module.exports = router;
