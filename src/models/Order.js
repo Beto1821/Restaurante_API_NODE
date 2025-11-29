@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // Schema para os itens do pedido
 const itemSchema = new mongoose.Schema({
   productId: {
-    type: Number,
+    type: String,
     required: true
   },
   quantity: {
@@ -31,7 +31,7 @@ const orderSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  items: [itemSchema]
+  itens: [itemSchema]
 });
 
 module.exports = mongoose.model('Order', orderSchema);
