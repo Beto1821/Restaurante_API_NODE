@@ -18,10 +18,10 @@ const toDbFormat = (order) => {
     orderId: order.numeroPedido,
     value: order.valorTotal,
     creationDate: order.dataCriacao,
-    itens: order.items.map(item => ({
+    itens: order.itens.map(item => ({
       productId: item.idItem,
-      quantity: item.quantidadeItem,
-      price: item.valorItem
+      quantity: item.quantidade,
+      price: item.precoUnitario
     }))
   };
 };

@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema({
     type: String,
     required: [true, 'O nome do cliente é obrigatório.'],
   },
-  items: [itemSchema], // Array de itens, usando o sub-schema
+  itens: [itemSchema], // Array de itens, usando o sub-schema
   total: { type: Number, required: true },
   status: { type: String, default: 'Recebido' },
 }, { timestamps: true }); // timestamps adiciona createdAt e updatedAt automaticamente
