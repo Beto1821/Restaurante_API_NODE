@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const { createOrder, getAllOrders, getOrderById, updateOrder, deleteOrder} = require('../controllers/orderController');
+const { validateOrderCreation, validateOrderUpdate } = require('../middlewares/validationMiddleware');
+const protect = require('../middlewares/authMiddleware');
 
+// Aplica o middleware de proteção a todas as rotas abaixo
+router.use(protect);
 
-router.post('/', createOrder);
+// Define as rotas
+
+router.post('/', validateOrderCreation, createOrder);
 router.get('/', getAllOrders);
 router.get('/:numeroPedido', getOrderById);
-router.put('/:numeroPedido', updateOrder);
+router.put('/:numeroPedido', validateOrderUpdate, updateOrder);
 router.delete('/:numeroPedido', deleteOrder);
 
 
