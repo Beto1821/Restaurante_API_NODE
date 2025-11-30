@@ -220,14 +220,6 @@ npm run lint:fix   # Corrige problemas do ESLint automaticamente
   - Documentação completa no Postman
   - Testes automatizados com alta cobertura
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
-
-## 📄 Licença
-
-ISC
-
 ---
 
 **Desenvolvido como parte do desafio técnico de API Node.js**
