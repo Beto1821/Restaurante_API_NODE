@@ -1,4 +1,4 @@
-// Função para converter do formato MongoDB para o formato da API
+// Converte do formato MongoDB para formato API
 const toApiFormat = (order) => {
   return {
     numeroPedido: order.orderId,
@@ -12,10 +12,11 @@ const toApiFormat = (order) => {
   };
 };
 
-// Função para converter do formato da API para o formato MongoDB
+// Converte do formato API para formato MongoDB
 const toDbFormat = (order) => {
   const calculatedTotal = order.itens.reduce((sum, item) => {
-    return sum + (item.valorItem * item.quantidadeItem);}, 0);
+    return sum + (item.valorItem * item.quantidadeItem);
+  }, 0);
   return {
     orderId: order.numeroPedido,
     value: calculatedTotal,

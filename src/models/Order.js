@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Schema para os itens do pedido
 const itemSchema = new mongoose.Schema({
   productId: {
     type: String,
@@ -16,7 +15,6 @@ const itemSchema = new mongoose.Schema({
   }
 });
 
-// Schema principal do pedido
 const orderSchema = new mongoose.Schema({
   orderId: {
     type: String,
